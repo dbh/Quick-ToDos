@@ -10,7 +10,8 @@ import CoreData
 
 struct AddToDoView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    @Environment(\.presentationMode) var presentationMode
+    
     @State var toDoTitle = ""
     
     var body: some View {
@@ -22,6 +23,8 @@ struct AddToDoView: View {
                     newToDo.title = toDoTitle
                     
                     try? viewContext.save()
+                    
+                    presentationMode.wrappedValue.dismiss()
 //                    do {
 //                        try viewContext.save()
 //                        toDoTitle = ""
