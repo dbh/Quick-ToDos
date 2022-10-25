@@ -13,6 +13,7 @@
 		3F2D28382907243D00388C4A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F2D28372907243D00388C4A /* Preview Assets.xcassets */; };
 		3F2D283A2907243D00388C4A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D28392907243D00388C4A /* Persistence.swift */; };
 		3F2D283D2907243D00388C4A /* Quick_ToDos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D283B2907243D00388C4A /* Quick_ToDos.xcdatamodeld */; };
+		3FC9003D29088E7F008693BE /* ToDoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9003C29088E7F008693BE /* ToDoDetailView.swift */; };
 		3FFCFA8B2907571500BC032D /* ToDoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFCFA8A2907571500BC032D /* ToDoListView.swift */; };
 		3FFCFA8D290878E200BC032D /* AddToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFCFA8C290878E200BC032D /* AddToDoView.swift */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,7 @@
 		3F2D28372907243D00388C4A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F2D28392907243D00388C4A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3F2D283C2907243D00388C4A /* Quick_ToDos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Quick_ToDos.xcdatamodel; sourceTree = "<group>"; };
+		3FC9003C29088E7F008693BE /* ToDoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailView.swift; sourceTree = "<group>"; };
 		3FFCFA8A2907571500BC032D /* ToDoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListView.swift; sourceTree = "<group>"; };
 		3FFCFA8C290878E200BC032D /* AddToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +65,7 @@
 				3F2D28322907243D00388C4A /* ContentView.swift */,
 				3FFCFA8A2907571500BC032D /* ToDoListView.swift */,
 				3FFCFA8C290878E200BC032D /* AddToDoView.swift */,
+				3FC9003C29088E7F008693BE /* ToDoDetailView.swift */,
 				3F2D28342907243D00388C4A /* Assets.xcassets */,
 				3F2D28392907243D00388C4A /* Persistence.swift */,
 				3F2D283B2907243D00388C4A /* Quick_ToDos.xcdatamodeld */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FC9003D29088E7F008693BE /* ToDoDetailView.swift in Sources */,
 				3F2D283A2907243D00388C4A /* Persistence.swift in Sources */,
 				3F2D283D2907243D00388C4A /* Quick_ToDos.xcdatamodeld in Sources */,
 				3FFCFA8D290878E200BC032D /* AddToDoView.swift in Sources */,
