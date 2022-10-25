@@ -21,13 +21,14 @@ struct AddToDoView: View {
                     let newToDo = ToDo(context: viewContext)
                     newToDo.title = toDoTitle
                     
-                    do {
-                        try viewContext.save()
-                        toDoTitle = ""
-                    } catch {
-                        let nsError = error as NSError
-                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-                    }
+                    try? viewContext.save()
+//                    do {
+//                        try viewContext.save()
+//                        toDoTitle = ""
+//                    } catch {
+//                        let nsError = error as NSError
+//                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//                    }
                 }) {
                     Text("Add to list")
                 }
