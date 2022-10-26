@@ -19,12 +19,26 @@ struct AddToDoView: View {
             .padding()
             .toolbar {
                 Button(action: {
-                    let newToDo = ToDo(context: viewContext)
-                    newToDo.title = toDoTitle
+                    if toDoTitle.isEmpty {
+                        print("Empty data")
+                        return
+                    }
                     
-                    try? viewContext.save()
-                    
-                    presentationMode.wrappedValue.dismiss()
+                    addToDo()
+                }) {
+                    Text("Add to list")
+                }
+            }
+    }
+    
+    func addToDo() {
+        let newToDo = ToDo(context: viewContext)
+        newToDo.title = toDoTitle
+        
+        
+        try? viewContext.save()
+        
+        presentationMode.wrappedValue.dismiss()
 //                    do {
 //                        try viewContext.save()
 //                        toDoTitle = ""
@@ -32,10 +46,6 @@ struct AddToDoView: View {
 //                        let nsError = error as NSError
 //                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
 //                    }
-                }) {
-                    Text("Add to list")
-                }
-            }
     }
 }
 
