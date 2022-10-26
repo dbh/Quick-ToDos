@@ -16,14 +16,13 @@ struct AddToDoView: View {
     
     var body: some View {
         TextField("Type your ToDo Text", text: $toDoTitle)
+            .submitLabel(.go)
+            .onSubmit {
+                addToDo()
+            }
             .padding()
             .toolbar {
                 Button(action: {
-                    if toDoTitle.isEmpty {
-                        print("Empty data")
-                        return
-                    }
-                    
                     addToDo()
                 }) {
                     Text("Add to list")
@@ -32,6 +31,11 @@ struct AddToDoView: View {
     }
     
     func addToDo() {
+        if toDoTitle.isEmpty {
+            print("Empty data")
+            return
+        }
+        
         let newToDo = ToDo(context: viewContext)
         newToDo.title = toDoTitle
         
