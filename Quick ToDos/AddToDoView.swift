@@ -11,23 +11,38 @@ import CoreData
 struct AddToDoView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
+    @FocusState var titleFocus: Bool
     
     @State var toDoTitle = ""
     
     var body: some View {
-        TextField("Type your ToDo Text", text: $toDoTitle)
-            .submitLabel(.go)
-            .onSubmit {
-                addToDo()
-            }
-            .padding()
-            .toolbar {
-                Button(action: {
+        VStack {
+            TextField("Type your ToDo Text", text: $toDoTitle)
+                .font(.largeTitle)
+                .multilineTextAlignment(.center)
+                .focused($titleFocus)
+                .submitLabel(.go)
+                .onSubmit {
                     addToDo()
-                }) {
-                    Text("Add to list")
                 }
+                .padding()
+                .toolbar {
+                    Button(action: {
+                        addToDo()
+                    }) {
+                        Text("Add to list")
+                    }
+                }
+
+            Spacer()
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                titleFocus = true
             }
+            
+        }
+        
     }
     
     func addToDo() {
@@ -43,13 +58,13 @@ struct AddToDoView: View {
         try? viewContext.save()
         
         presentationMode.wrappedValue.dismiss()
-//                    do {
-//                        try viewContext.save()
-//                        toDoTitle = ""
-//                    } catch {
-//                        let nsError = error as NSError
-//                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//                    }
+        //                    do {
+        //                        try viewContext.save()
+        //                        toDoTitle = ""
+        //                    } catch {
+        //                        let nsError = error as NSError
+        //                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        //                    }
     }
 }
 
